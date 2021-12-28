@@ -1,0 +1,72 @@
+.create-new-connection h3 {
+    font-size: 23px;
+    margin-bottom: 25px;
+}
+
+.create-new-connection h3 span {
+    background-color: black;
+    color: white;
+    width: 30px;
+    height: 30px;
+    line-height: 28px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.create-new-connection .buttons {
+    display: flex;
+    justify-content: flex-start !important;
+}
+
+.create-new-connection .buttons a,
+.create-new-connection .buttons button {
+    background-color: black;
+    padding: 10px 18px 12px;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    margin-right: 18px;
+    margin-top: 0px;
+}
+
+.create-new-connection .buttons a:hover,
+.create-new-connection .buttons button:hover {
+    background-color: #555 !important;
+} 
+
+.creation-forms form {
+    margin-top: 35px;
+    width: 800px;
+    max-width: 100%;
+    display: none;
+}
+
+.creation-forms form input:not([type=checkbox]) {
+    width: calc(100% - 44px);
+    padding: 14px 22px;
+    background-color: #ddd;
+    border: none;
+    outline: none;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.creation-forms form .redirect_url {
+    font-size: 14px;
+    height: 30px;
+    margin-left: 11px;
+    display: none;
+}
+
+.creation-forms form a[fetch-issuer-wellknown] {
+    font-size: 14px;
+    height: 30px;
+    margin-left: 11px;
+    display: none;
+}
+
+.creation-forms form input + h3 {
+    margin-top: 20px;
+}

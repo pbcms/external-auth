@@ -1,0 +1,88 @@
+.edit-connection {
+    margin-top: 0px !important;
+    padding-top: 0px !important;
+}
+
+.edit-connection h3 {
+    font-size: 23px;
+    margin-bottom: 25px;
+}
+
+.edit-connection h3 span {
+    background-color: black;
+    color: white;
+    width: 30px;
+    height: 30px;
+    line-height: 28px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.edit-connection .buttons {
+    display: flex;
+    justify-content: flex-start !important;
+}
+
+.edit-connection .buttons a,
+.edit-connection .buttons button {
+    background-color: black;
+    padding: 10px 18px 12px;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    margin-right: 18px;
+    margin-top: 0px;
+}
+
+.edit-connection .buttons a:hover,
+.edit-connection .buttons button:hover {
+    background-color: #555 !important;
+} 
+
+.edit-connection .buttons button[delete-connection] {
+    background-color: red !important;
+}
+
+.edit-connection .buttons button[delete-connection]:hover {
+    background-color: #f74141 !important;
+}
+
+.edit-connection .buttons a[confirmed-delete-connection] {
+    display: none;
+}
+
+.edit-connection form {
+    margin-top: 35px;
+    width: 800px;
+    max-width: 100%;
+}
+
+.edit-connection form input:not([type=checkbox]) {
+    width: calc(100% - 44px);
+    padding: 14px 22px;
+    background-color: #ddd;
+    border: none;
+    outline: none;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.edit-connection form .redirect_url {
+    font-size: 14px;
+    height: 30px;
+    margin-left: 11px;
+    display: none;
+}
+
+.edit-connection form a[fetch-issuer-wellknown] {
+    font-size: 14px;
+    height: 30px;
+    margin-left: 11px;
+    display: none;
+}
+
+.edit-connection form input + h3 {
+    margin-top: 20px;
+}

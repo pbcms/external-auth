@@ -1,0 +1,9 @@
+{
+    "name": "External authentication",
+    "module": "external-auth",
+    "description": "Provides support for external authentication.",
+    "author": "PBCMS developers",
+    "version": "1.0.0",
+    "repository": "https://github.com/pbcms/external-auth",
+    "license": "GPLv3"
+}
