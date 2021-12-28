@@ -5,5 +5,8 @@
     "author": "PBCMS developers",
     "version": "1.0.0",
     "repository": "https://github.com/pbcms/external-auth",
-    "license": "GPLv3"
+    "license": "GPLv3",
+    "listed-in": [
+        "https://raw.githubusercontent.com/pbcms/updates/main/modules/stable.json"
+    ]
 }
