@@ -36,6 +36,9 @@
                     $endpoint = $property['property'];
                     $connection->endpoints[$endpoint] = $property['value'];
                     break;
+                case 'scopes':
+                    $connection->scopes = $property['value'];
+                    break;
             }
         }
     } else {
@@ -75,7 +78,8 @@
             <input type="text" class="field-endpoint" name="endpoint_authorization" value="<?php echo $connection->endpoints['endpoint_authorization']; ?>" placeholder="Authorization endpoint *" required>
             <input type="text" class="field-endpoint" name="endpoint_token" value="<?php echo $connection->endpoints['endpoint_token']; ?>" placeholder="Token endpoint *" required>
             <input type="text" class="field-endpoint" name="endpoint_userinfo" value="<?php echo $connection->endpoints['endpoint_userinfo']; ?>" placeholder="Userinfo endpoint *" required>
-            <input type="text" class="field-endpoint" name="endpoint_end_session" value="<?php echo $connection->endpoints['endpoint_end_session']; ?>" placeholder="End session endpoint">
+            <input type="text" class="field-endpoint" name="endpoint_end_session" value="<?php echo (isset($connection->endpoints['endpoint_end_session']) ? $connection->endpoints['endpoint_end_session'] : ''); ?>" placeholder="End session endpoint">
+            <input type="text" name="scopes" value="<?php echo $connection->scopes; ?>" placeholder="Scopes">
             
             <h3>
                 <span>C</span> Save & test

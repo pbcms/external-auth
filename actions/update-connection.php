@@ -30,14 +30,15 @@
         if ($obj->exists('mod-external-auth-connection', $body->system_name)) {
             switch(strtolower(explode('_', $body->system_name)[0])) {
                 case 'oidc':
-                    if ($body->name)                    $connection->set('name', $body->name);
-                    if ($body->client_id)               $connection->set('client_id', $body->client_id);
-                    if ($body->client_secret)           $connection->set('client_secret', $body->client_secret);
-                    if ($body->issuer)                  $connection->set('issuer', $body->issuer);
-                    if ($body->endpoint_authorization)  $connection->set('endpoint_authorization', $body->endpoint_authorization);
-                    if ($body->endpoint_token)          $connection->set('endpoint_token', $body->endpoint_token);
-                    if ($body->endpoint_userinfo)       $connection->set('endpoint_userinfo', $body->endpoint_userinfo);
-                    if ($body->endpoint_end_session)    $connection->set('endpoint_end_session', $body->endpoint_end_session);
+                    if (isset($body->name))                    $connection->set('name', $body->name);
+                    if (isset($body->client_id))               $connection->set('client_id', $body->client_id);
+                    if (isset($body->client_secret))           $connection->set('client_secret', $body->client_secret);
+                    if (isset($body->issuer))                  $connection->set('issuer', $body->issuer);
+                    if (isset($body->endpoint_authorization))  $connection->set('endpoint_authorization', $body->endpoint_authorization);
+                    if (isset($body->endpoint_token))          $connection->set('endpoint_token', $body->endpoint_token);
+                    if (isset($body->endpoint_userinfo))       $connection->set('endpoint_userinfo', $body->endpoint_userinfo);
+                    if (isset($body->endpoint_end_session))    $connection->set('endpoint_end_session', $body->endpoint_end_session);
+                    if (isset($body->scopes))                  $connection->set('scopes', $body->scopes);
                     break;
             }
 

@@ -50,7 +50,7 @@
                 <span>A</span> Connection details
             </h3>
             <input type="text" name="name" placeholder="Display name *" required>
-            <p class="redirect_url"></p>
+            <p class="redirect_url selectable"></p>
             <input type="text" name="client_id" placeholder="Client ID *" required>
             <input type="text" name="client_secret" placeholder="Client Secret *" required>
 
@@ -66,6 +66,7 @@
             <input type="text" class="field-endpoint" name="endpoint_token" placeholder="Token endpoint *" required>
             <input type="text" class="field-endpoint" name="endpoint_userinfo" placeholder="Userinfo endpoint *" required>
             <input type="text" class="field-endpoint" name="endpoint_end_session" placeholder="End session endpoint">
+            <input type="text" name="scopes" placeholder="Scopes" value="profile email *">
         
             <h3>
                 <span>C</span> Save & test

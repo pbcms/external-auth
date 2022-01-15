@@ -32,7 +32,7 @@
             form.querySelector('input[name="name"] + .redirect_url').innerText = '';
             form.querySelector('input[name="name"] + .redirect_url').style.display = 'none';
         } else {
-            form.querySelector('input[name="name"] + .redirect_url').innerHTML = '<b>Redirect URI:</b> ' + SITE_LOCATION + 'pb-auth/plugin/oidc_' + e.target.value.toLowerCase().replace(' ', '-').replace(/[^A-Za-z0-9\-]/g, '');
+            form.querySelector('input[name="name"] + .redirect_url').innerHTML = '<b>Redirect URI:</b> <span class="selectable">' + SITE_LOCATION + 'pb-auth/plugin/oidc_' + e.target.value.toLowerCase().replace(' ', '-').replace(/[^A-Za-z0-9\-]/g, '') + '</span>';
             form.querySelector('input[name="name"] + .redirect_url').style.display = 'block';
         }
     });

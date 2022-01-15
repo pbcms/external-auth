@@ -32,7 +32,8 @@
             endpoint_authorization: form.querySelector('input[name="endpoint_authorization"]').value,
             endpoint_token: form.querySelector('input[name="endpoint_token"]').value,
             endpoint_userinfo: form.querySelector('input[name="endpoint_userinfo"]').value,
-            endpoint_end_session: form.querySelector('input[name="endpoint_end_session"]').value
+            endpoint_end_session: form.querySelector('input[name="endpoint_end_session"]').value,
+            scopes: form.querySelector('input[name="scopes"]').value
         };
 
         PbAuth.apiInstance(false).post(SITE_LOCATION + 'pb-loader/module/external-auth/update-connection', data).then(res => {

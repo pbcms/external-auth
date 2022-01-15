@@ -6,6 +6,7 @@
     use Library\Policy;
     use Library\Token;
     use Library\Sessions;
+    use Library\Controller;
     use Helper\Header;
     use Helper\ApiResponse as Respond;
 
@@ -14,6 +15,7 @@
         private $systemName;
         private $client_id;
         private $client_secret;
+        private $scopes;
         private $endpoints = array();
 
         public function __construct($params, $connection) {
@@ -39,6 +41,9 @@
                         $endpoint = $property['property'];
                         $this->endpoints[$endpoint] = $property['value'];
                         break;
+                    case 'scopes':
+                        $this->scopes = $property['value'];
+                        break;
                 }
             }
 
@@ -49,6 +54,9 @@
                 switch($params[0]) {
                     case 'signout':
                         $this->signout($sliced);   
+                        break;
+                    case 'complete-signup':
+                        $this->completeSignup($sliced);
                         break;
                     default:
                         http_response_code(400);
@@ -137,7 +145,11 @@
                     $secure = (isset($_SERVER['HTTPS']) && !empty($_SERVER['HTTPS']) ? true : false);
                     $url = parse_url(SITE_LOCATION);
                     setcookie('pb-refresh-token', $token->token, 2147483647, $url['path'], $url['host'], $secure, true);
-                    Header::Location(SITE_LOCATION . 'pb-dashboard');
+                    if (intval($users->metaGet($uid, 'oidc_signup_completed')) == 1) {
+                        Header::Location(SITE_LOCATION . 'pb-dashboard');
+                    } else {
+                        Header::Location(SITE_LOCATION . 'pb-auth/plugin/' . $this->systemName . '/complete-signup');
+                    }
                 } else {
                     Respond::error($token->error, $this->lang->get('messages.api-auth.create-session.error-token_error', "An error occured while creating the refresh-token."));
                 }
@@ -146,7 +158,7 @@
                     'client_id' => $this->client_id,
                     'redirect_uri' => SITE_LOCATION . 'pb-auth/plugin/' . $this->systemName,
                     'response_type' => 'code',
-                    'scope' => 'profile email'
+                    'scope' => $this->scopes
                 )));
 
                 die();

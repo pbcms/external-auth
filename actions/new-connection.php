@@ -16,7 +16,7 @@
     }
     
     $body = (object) Request::parseBody();
-    $required = array('type', 'name', 'client_id', 'client_secret', 'issuer', 'endpoint_authorization', 'endpoint_token', 'endpoint_userinfo');
+    $required = array('type', 'name', 'client_id', 'client_secret', 'issuer', 'endpoint_authorization', 'endpoint_token', 'endpoint_userinfo', 'scopes');
     $missing = Validate::listMissing($required, $body);
 
     if (count($missing) > 0) {
@@ -39,6 +39,7 @@
                         $connection->set('endpoint_token', $body->endpoint_token);
                         $connection->set('endpoint_userinfo', $body->endpoint_userinfo);
                         if ($body->endpoint_end_session) $connection->set('endpoint_end_session', $body->endpoint_end_session);
+                        $connection->set('scopes', $body->scopes);
                         break;
                 }
 
