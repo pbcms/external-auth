@@ -112,7 +112,6 @@
             $user = $userModel->info();
 
             if (intval($users->metaGet($user->id, 'mod-external_auth-signup_completed')) == 1) {
-                die('a');
                 if (isset($_GET['followup'])) {
                     Header::Location(SITE_LOCATION . (substr($_GET['followup'], 0, 1) == '/' ? substr($_GET['followup'], 1) : $_GET['followup']));
                 } else {
